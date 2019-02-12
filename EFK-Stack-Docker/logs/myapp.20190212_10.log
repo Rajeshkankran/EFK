@@ -1,0 +1,6 @@
+2019-02-12T07:54:36+00:00	fluent.warn	{"error":"Could not parse data entirely (0 != 270)","message":"unexpected error error=\"Could not parse data entirely (0 != 270)\""}
+2019-02-12T07:54:36+00:00	fluent.info	{"message":"shutting down fluentd"}
+2019-02-12T07:54:36+00:00	fluent.info	{"type":"http","plugin_id":"object:2abb5ca4346c","message":"shutting down input type=\"http\" plugin_id=\"object:2abb5ca4346c\""}
+2019-02-12T07:54:36+00:00	fluent.info	{"type":"copy","plugin_id":"object:2abb5c53c84c","message":"shutting down output type=\"copy\" plugin_id=\"object:2abb5c53c84c\""}
+2019-02-12T07:54:36+00:00	fluent.info	{"type":"stdout","plugin_id":"object:2abb5c0f5018","message":"shutting down output type=\"stdout\" plugin_id=\"object:2abb5c0f5018\""}
+2019-02-12T07:54:36+00:00	fluent.warn	{"next_retry":"2019-02-12 07:54:37 +0000","error_class":"Fluent::ElasticsearchOutput::ConnectionFailure","error":"Can not reach Elasticsearch cluster ({:host=>\"elasticsearch\", :port=>9200, :scheme=>\"http\"})!","plugin_id":"object:2abb5c66f610","message":"temporarily failed to flush the buffer. next_retry=2019-02-12 07:54:37 +0000 error_class=\"Fluent::ElasticsearchOutput::ConnectionFailure\" error=\"Can not reach Elasticsearch cluster ({:host=>\\\"elasticsearch\\\", :port=>9200, :scheme=>\\\"http\\\"})!\" plugin_id=\"object:2abb5c66f610\""}

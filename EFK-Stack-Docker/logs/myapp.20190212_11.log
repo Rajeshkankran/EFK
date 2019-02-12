@@ -1,0 +1,2 @@
+2019-02-12T07:54:13+00:00	myapp.follow	{"from":"userA","to":"userB"}
+2019-02-12T07:55:45+00:00	fluent.info	{"message":"Connection opened to Elasticsearch cluster => {:host=>\"elasticsearch\", :port=>9200, :scheme=>\"http\"}"}

@@ -1,0 +1,2 @@
+2019-02-12T07:03:09+00:00	fluent.info	{"message":"Connection opened to Elasticsearch cluster => {:host=>\"elasticsearch\", :port=>9200, :scheme=>\"http\"}"}
+2019-02-12T07:03:09+00:00	fluent.warn	{"plugin_id":"object:2b19297dacf4","message":"retry succeeded. plugin_id=\"object:2b19297dacf4\""}
