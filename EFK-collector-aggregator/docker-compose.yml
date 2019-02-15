@@ -1,0 +1,52 @@
+version: "2"
+services:
+
+  fluent-collector:
+    container_name: fluent-collector
+    image:  fluent-collector-efk
+    links: 
+      - fluent-aggregator-1
+      - fluent-aggregator-2
+    build: $PWD/collector  
+    volumes: 
+      - $PWD/collector:/fluent/etc
+    ports:
+      - "8888:8888"
+
+  fluent-aggregator-1:
+    container_name: fluent-aggregator-1
+    image:  fluent-efk
+    volumes: 
+      - $PWD/aggregator:/fluent/etc
+    ports:
+      - "25224:24224"
+      - "25224:24224/udp"
+
+  fluent-aggregator-2:
+    container_name: fluent-aggregator-2
+    image: fluent-efk
+    volumes: 
+      - $PWD/aggregator:/fluent/etc
+    ports:
+      - "25225:24225"
+      - "25225:24225/udp"  
+
+  elasticsearch:
+    container_name: elasticsearch
+    image: elasticsearch:6.6.0
+    environment:
+      discovery.type: single-node
+    expose:
+      - 9200
+    ports:
+      - "9200:9200"
+
+  kibana:
+    container_name: kibana
+    image: kibana:6.6.0
+    environment:
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+    links:
+      - elasticsearch
+    ports:
+      - "5601:5601"    

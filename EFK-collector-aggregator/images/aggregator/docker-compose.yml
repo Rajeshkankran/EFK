@@ -1,0 +1,33 @@
+version: "2"
+services:
+
+  fluent-aggregator-1:
+    container_name: fluent-aggregator-1
+    image:  fluent-efk
+    build: ./fluentd
+    volumes: 
+      - ./fluentd/conf:/fluentd/etc
+      - ./logs:/logs
+    ports:
+      - "24224:24224"
+      - "24224:24224/udp"
+
+  elasticsearch:
+    container_name: elasticsearch
+    image: elasticsearch:6.6.0
+    environment:
+      discovery.type: single-node
+    expose:
+      - 9200
+    ports:
+      - "9200:9200"
+
+  kibana:
+    container_name: kibana
+    image: kibana:6.6.0
+    environment:
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+    links:
+      - elasticsearch
+    ports:
+      - "5601:5601"    
